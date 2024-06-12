@@ -65,7 +65,8 @@
   .purple {
     background-color: #9f7aea;
     border: none;
-    margin-top: 20px;
+    margin-top: 40px;
+    font-size: 15px;
   }
   
   h2 {
@@ -89,3 +90,56 @@
     margin-top: 20px;
   }
   .more-number-error{color:white;background-color: red;border-radius: 5px;}
+
+  .connect-wallet{
+    background-color: #9f7aea;
+    border: none;
+    margin-top: 40px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-resalt{
+    font-weight: bold;
+    text-align: center;
+    margin: 0 4px;
+    border-radius: 50%;
+    background-color: #1E196D;
+    color: white;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+  
+
+  }
+  .vote{
+    background-color: #FF6666;
+  }
+
+  /* .resualt{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+  }
+  */
+
+  .resualt h1{
+    background-color: green;
+    border-radius:6px ;
+    color: white;
+    margin-bottom: 50px;
+  }
+
+  .connect-wallet img{
+    padding-right: 10px;
+  }
+
+  .wallet-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }

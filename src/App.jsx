@@ -4,7 +4,7 @@ import NumberSelector from './components/NumberSelector';
 import VotingScreen from './components/VotingScreen';
 import { NumberProvider } from './components/NumberProvider';
 import ResultsScreen from './components/ResultsScreen';
-// import { NumberProvider } from './NumberContext';
+import ConnectWallet from './components/ConnectWallet';
 
 function App() {
   return (
