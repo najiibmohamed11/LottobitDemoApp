@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import MetaMask from "../assets/metMask.png"
+import { useNumbers } from './NumberProvider';
 
 export default function ConnectWallet() {
     const [walletAddress, setWalletAddress] = useState("");
+   const{setTruncateAddress}= useNumbers()
     const navigate = useNavigate();
 
     const connectWallet = async () => {
@@ -14,7 +16,9 @@ export default function ConnectWallet() {
               method: "eth_requestAccounts",
             });
             setWalletAddress(accounts[0]);
-            console.log(accounts[0]);
+            setTruncateAddress(truncateAddress(accounts[0]));  // Update the context
+
+            navigate("/playing")
           } catch (err) {
             console.error(err.message);
           }
@@ -30,6 +34,7 @@ export default function ConnectWallet() {
         const end = address.slice(-4);
         return `${start}...${end}`;
     };
+
 
     return (
         <div className='wallet-btn'>

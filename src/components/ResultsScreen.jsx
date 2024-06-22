@@ -33,8 +33,10 @@ const ResultsScreen = () => {
       
     
       {/* Additional result display logic goes here */}
-      <ConnectWallet/>
+      {/* <ConnectWallet/> */}
+      <button className="button purple">proceed</button>
     </div>
+
   );
 }
 

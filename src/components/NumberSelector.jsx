@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PyramidGrid from './PyramidGrid';
 import { useNumbers } from './NumberProvider';
+import ConnectWallet from './ConnectWallet';
 // import { useNumbers } from '../NumberContext';
 
 const NumberSelector = () => {
-  const { setSortedSelectedNumbers,sortedSelectedNumbersLength  } = useNumbers();
+  const { setSortedSelectedNumbers,sortedSelectedNumbersLength, truncateAddress } = useNumbers();
+  console.log(truncateAddress);
+
   const [insuvicent,setInsuvicent] = useState(false)
   const navigate = useNavigate();
   const handleClick=()=>{
@@ -21,10 +24,11 @@ const NumberSelector = () => {
 
   return (
     <div className="screen" id="select-numbers">
+      {/* <button className='button  purple'>{truncateAddress}</button> */}
       <h2>Select your 7 game numbers</h2>
       {insuvicent&&<p className='more-number-error'>PLEAS SELECT MORE NUMBERS</p>}
       <span>{sortedSelectedNumbersLength}</span>
-      <PyramidGrid onNumbersChange={setSortedSelectedNumbers} />  
+      <PyramidGrid onNumbersChange={setSortedSelectedNumbers} Page="your's" />  
       <button className="button blue" onClick={handleClick}>Next</button>
     </div>
   );

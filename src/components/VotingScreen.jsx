@@ -50,7 +50,7 @@ const VotingScreen = () => {
       {insufficient && <p className='more-number-error'>PLEASE SELECT MORE NUMBERS</p>}
       {isSameNumber && <p className='more-number-error'>YOU CAN'T VOTE YOUR NUMBERS</p>}
       <span>{votedListLength}</span>
-      <PyramidGrid onNumbersChange={setSortedVotedNumbers} />
+      <PyramidGrid onNumbersChange={setSortedVotedNumbers} Page="vote" />
       <button className="button green" onClick={handleClick}>Mine My Vote</button>
     </div>
   );
