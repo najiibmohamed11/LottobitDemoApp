@@ -4,10 +4,11 @@ import PyramidGrid from './PyramidGrid';
 import { useNumbers } from './NumberProvider';
 import ConnectWallet from './ConnectWallet';
 // import { useNumbers } from '../NumberContext';
+import { auth } from '../firebase';
 
 const NumberSelector = () => {
   const { setSortedSelectedNumbers,sortedSelectedNumbersLength, truncateAddress } = useNumbers();
-  console.log(truncateAddress);
+
 
   const [insuvicent,setInsuvicent] = useState(false)
   const navigate = useNavigate();

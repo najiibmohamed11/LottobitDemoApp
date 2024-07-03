@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import MetaMask from "../assets/metMask.png"
 import { useNumbers } from './NumberProvider';
+
 
 export default function ConnectWallet() {
     const [walletAddress, setWalletAddress] = useState("");
    const{setTruncateAddress}= useNumbers()
     const navigate = useNavigate();
+ 
 
     const connectWallet = async () => {
         if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
