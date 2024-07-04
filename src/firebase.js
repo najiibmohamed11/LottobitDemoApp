@@ -21,27 +21,27 @@ const firebaseConfig = {
 
 
 
-  async function initializeVotesCollection() {
-    const voteCounts = [];
-    for (let i = 1; i <= 21; i++) {
-      voteCounts.push({ key: i, value: 0 });
-    }
+//   async function initializeVotesCollection() {
+//     const voteCounts = [];
+//     for (let i = 1; i <= 21; i++) {
+//       voteCounts.push({ key: i, value: 0 });
+//     }
   
-    const docRef = doc(db, 'votes', 'voteDocument');
-    await setDoc(docRef, {
-      voteCount: voteCounts
-    });
+//     const docRef = doc(db, 'votes', 'voteDocument');
+//     await setDoc(docRef, {
+//       voteCount: voteCounts
+//     });
   
-    console.log("Votes collection initialized with a single document containing a list of objects");
-  }
+//     console.log("Votes collection initialized with a single document containing a list of objects");
+//   }
 
-initializeVotesCollection()
-  .then(() => {
-    console.log("Initialization completed");
-  })
-  .catch((error) => {
-    console.error("Error initializing votes collection: ", error);
-  });
+// initializeVotesCollection()
+//   .then(() => {
+//     console.log("Initialization completed");
+//   })
+//   .catch((error) => {
+//     console.error("Error initializing votes collection: ", error);
+//   });
 
 
   export { db, app, auth, provider, signOut };
