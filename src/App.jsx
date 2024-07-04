@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import NumberSelector from './components/NumberSelector';
 import VotingScreen from './components/VotingScreen';
@@ -47,11 +47,12 @@ function App() {
       <Router>
         <NumberProvider>
           <Routes>
-            <Route path="/" element={user ? (isVoted ? <WaitResualt /> : <NumberSelector />) : <Login />} />
-            <Route path="/playing" element={<NumberSelector />} />
-            <Route path="/voting" element={<VotingScreen />} />
-            <Route path="/result" element={<ResultsScreen />} />
-            <Route path="/finalresult" element={<WaitResualt />} />
+            <Route path="/" element={user ? (isVoted ? <Navigate to="/finalresult" /> : <Navigate to="/playing" />) : <Navigate to="/login" />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/playing" element={user ? (isVoted ? <Navigate to="/finalresult" /> : <NumberSelector />) : <Navigate to="/login" />} />
+            <Route path="/voting" element={user ? <VotingScreen /> : <Navigate to="/login" />} />
+            <Route path="/result" element={user ? <ResultsScreen /> : <Navigate to="/login" />} />
+            <Route path="/finalresult" element={user ? <WaitResualt /> : <Navigate to="/login" />} />
           </Routes>
         </NumberProvider>
       </Router>
