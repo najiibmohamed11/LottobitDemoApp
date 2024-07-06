@@ -52,7 +52,17 @@ function App() {
             <Route path="/playing" element={user ? (isVoted ? <Navigate to="/finalresult" /> : <NumberSelector />) : <Navigate to="/login" />} />
             <Route path="/voting" element={user ? <VotingScreen /> : <Navigate to="/login" />} />
             <Route path="/result" element={user ? <ResultsScreen /> : <Navigate to="/login" />} />
-            <Route path="/finalresult" element={user ? <WaitResualt /> : <Navigate to="/login" />} />
+            <Route 
+  path="/finalresult" 
+  element={
+    user ? (
+      isVoted ? 
+        <WaitResualt /> : 
+        <Navigate to="/playing" />  // Redirect to a different route if not voted
+    ) : 
+    <Navigate to="/login" />
+  } 
+/>
           </Routes>
         </NumberProvider>
       </Router>

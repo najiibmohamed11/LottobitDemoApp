@@ -11,25 +11,24 @@ function WaitResualt() {
   const [selectedNumbers, setSelectedNumbers] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const intervalId = setInterval(async () => {
       const full = await isLequiditypolfull();
       setIsFull(full);
-
+  
       if (full) {
         const winners = await get7MostVoted();
         setWinners(winners);
-        const isWinerOr= await IswinerOrnot()
+        const isWinerOr = await IswinerOrnot();
         setIswiner(isWinerOr);
       } else {
         const amount = await getTotalAmount();
         setTotalAmount(amount);
       }
-      const selected = await getSelectedNumbers();
-      setSelectedNumbers(selected);
-        };
-
-    fetchData();
+    }, 5000);  // Polling every 5 seconds
+  
+    return () => clearInterval(intervalId);
   }, []);
+  
 
   const maxAmount = 400;
   const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
