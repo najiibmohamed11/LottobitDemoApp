@@ -34,7 +34,9 @@ function WaitResualt() {
   
 
   const maxAmount = 1300;
-  const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
+  // const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
+  const percentage = totalAmount ? Math.round((totalAmount / maxAmount) * 100) : 0;
+
   return (
     <div className="screen">
          <h1 style={{backgroundColor:"green" , color:"white"}}>Resualt</h1>
