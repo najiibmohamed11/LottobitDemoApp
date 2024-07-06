@@ -55,11 +55,9 @@ function App() {
             <Route 
   path="/finalresult" 
   element={
-    user ? (
-      isVoted ? 
+    user ? 
         <WaitResualt /> : 
-        <Navigate to="/playing" />  // Redirect to a different route if not voted
-    ) : 
+
     <Navigate to="/login" />
   } 
 />

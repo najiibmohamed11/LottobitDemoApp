@@ -37,7 +37,7 @@ function WaitResualt() {
   const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
   return (
     <div className="screen">
-         <h1>Resualt</h1>
+         <h1 style={{backgroundColor:"green" , color:"white"}}>Resualt</h1>
       {isFull ? (
         <>
         <p style={{color:"red"}}>{iswINER?"You Are The Winner":"You Are Not The Winner"}</p>

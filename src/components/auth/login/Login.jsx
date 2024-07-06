@@ -13,7 +13,6 @@ const Login = () => {
         async()=>{
        await signInWithGoogle()
        navigate("/")
-       window. location. reload();
       }} style={{border:"none",backgroundColor:"#646cffaa",color:"white",display:"flex",justifyContent:"center",alignItems:"center"}}> <img src={google} width={30} ></img> Sign in with Google</button>
     </div>
   );
