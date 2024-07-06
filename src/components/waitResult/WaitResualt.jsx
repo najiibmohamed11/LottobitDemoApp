@@ -33,7 +33,7 @@ function WaitResualt() {
   }, []);
   
 
-  const maxAmount = 1000;
+  const maxAmount = 1300;
   const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
   return (
     <div className="screen">
