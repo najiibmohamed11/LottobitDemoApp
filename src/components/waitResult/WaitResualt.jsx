@@ -24,7 +24,10 @@ function WaitResualt() {
         const amount = await getTotalAmount();
         setTotalAmount(amount);
       }
-    }, 5000);  // Polling every 5 seconds
+      const selected = await getSelectedNumbers();
+      setSelectedNumbers(selected);
+    }, 1000);  // Polling every 5 seconds
+    
   
     return () => clearInterval(intervalId);
   }, []);
