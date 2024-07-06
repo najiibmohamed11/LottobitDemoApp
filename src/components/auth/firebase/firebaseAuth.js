@@ -13,6 +13,8 @@ const signInWithGoogle = async () => {
   }
 };
 
+
+
 const logout = async () => {
   try {
     await signOut(auth);
