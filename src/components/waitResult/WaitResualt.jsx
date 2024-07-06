@@ -35,14 +35,16 @@ function WaitResualt() {
 
   const maxAmount = 1300;
   // const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
-  const percentage = totalAmount ? Math.round((totalAmount / maxAmount) * 100) : 0;
+  // const percentage = totalAmount ? Math.round((totalAmount / maxAmount) * 100) : 0;
+  const percentage = totalAmount ? Math.min(Math.round((totalAmount / maxAmount) * 100), 100) : 0;
+
 
   return (
     <div className="screen">
          <h1 style={{backgroundColor:"green" , color:"white"}}>Resualt</h1>
       {isFull ? (
         <>
-        <p style={{color:"red"}}>{iswINER?"You Are The Winner":"You Are Not The Winner and you get "}</p>
+        <p style={{color:"red"}}>{iswINER?"You Are The Winner":"You Are Not The Winner  "}</p>
 
         <h2>Most voted Numbers or winers</h2>
 
