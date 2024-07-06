@@ -33,14 +33,14 @@ function WaitResualt() {
   }, []);
   
 
-  const maxAmount = 400;
+  const maxAmount = 1000;
   const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
   return (
     <div className="screen">
          <h1 style={{backgroundColor:"green" , color:"white"}}>Resualt</h1>
       {isFull ? (
         <>
-        <p style={{color:"red"}}>{iswINER?"You Are The Winner":"You Are Not The Winner"}</p>
+        <p style={{color:"red"}}>{iswINER?"You Are The Winner":"You Are Not The Winner and you get "}</p>
 
         <h2>Most voted Numbers or winers</h2>
 

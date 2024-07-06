@@ -47,7 +47,7 @@ export async function submitPlayerData(selectedNumbers, votedNumbers, paidAmount
 
     await updateLiquidityPool(paidAmount);
     await submitVotes(votedNumbers);
-    await checkAndPublishResults(400); // Ensure this is called after votes are updated
+    await checkAndPublishResults(1000); // Ensure this is called after votes are updated
   } catch (error) {
     console.error("Error submitting player data:", error);
   }

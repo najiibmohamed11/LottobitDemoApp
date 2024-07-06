@@ -10,8 +10,11 @@ const ResultsScreen = () => {
   const[isloading,setIsloading]= useState(false);
   const navigate=  useNavigate()
   useEffect(() => {
-    if (!sortedSelectedNumbers || !sortedVotedNumbers) {
+    if (!sortedSelectedNumbers?.length || !sortedVotedNumbers?.length) {
       navigate('/');
+      console.log("No data available");
+    } else {
+      console.log("Data is available");
     }
   }, [sortedSelectedNumbers, sortedVotedNumbers, navigate]);
 
