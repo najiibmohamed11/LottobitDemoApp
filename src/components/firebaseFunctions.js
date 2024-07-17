@@ -47,7 +47,7 @@ export async function submitPlayerData(selectedNumbers, votedNumbers, paidAmount
 
     await updateLiquidityPool(paidAmount);
     await submitVotes(votedNumbers);
-    await checkAndPublishResults(1300); // Ensure this is called after votes are updated
+    await checkAndPublishResults(1000); // Ensure this is called after votes are updated
   } catch (error) {
     console.error("Error submitting player data:", error);
   }
@@ -101,7 +101,9 @@ async function getThe7HighestVotedNumbers() {
         voteCounts.sort((a, b) => b.value - a.value);
 
         // Get the top 7 items
-        const top7 = voteCounts.slice(0, 7);
+        const top7 = voteCounts.slice(0, 2);
+
+        top7.sort((a, b) => a.key - b.key);
       
         // Collect the keys of the top 7 items
         top7.forEach(item => {

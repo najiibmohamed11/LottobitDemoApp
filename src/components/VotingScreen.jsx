@@ -33,7 +33,7 @@ const VotingScreen = () => {
   // },[sortedSelectedNumbers,sortedVotedNumbers])
 
   const handleClick = () => {
-    if (votedListLength === 7 && !arraysAreEqual(sortedSelectedNumbers, sortedVotedNumbers)) {
+    if (votedListLength === 2 && !arraysAreEqual(sortedSelectedNumbers, sortedVotedNumbers)) {
       navigate('/result');
     } else if (arraysAreEqual(sortedSelectedNumbers, sortedVotedNumbers)) {
       setIsSameNumber(true);
@@ -46,7 +46,7 @@ const VotingScreen = () => {
 
   return (
     <div className="screen" id="vote-numbers">
-      <h2>VOTE FOR NUMBER TO BE WINNER</h2>
+      <h2>VOTE FOR 2 NUMBER that you would like TO BE WINNER</h2>
       {insufficient && <p className='more-number-error'>PLEASE SELECT MORE NUMBERS</p>}
       {isSameNumber && <p className='more-number-error'>YOU CAN'T VOTE YOUR NUMBERS</p>}
       <span>{votedListLength}</span>

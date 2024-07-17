@@ -13,7 +13,7 @@ const NumberSelector = () => {
   const [insuvicent,setInsuvicent] = useState(false)
   const navigate = useNavigate();
   const handleClick=()=>{
-    if(sortedSelectedNumbersLength==7){
+    if(sortedSelectedNumbersLength==2){
       navigate('/voting')
 
     }else{
@@ -26,7 +26,7 @@ const NumberSelector = () => {
   return (
     <div className="screen" id="select-numbers">
       {/* <button className='button  purple'>{truncateAddress}</button> */}
-      <h2>Select your 7 game numbers</h2>
+      <h2>Select your 2 game numbers</h2>
       {insuvicent&&<p className='more-number-error'>PLEAS SELECT MORE NUMBERS</p>}
       <span>{sortedSelectedNumbersLength}</span>
       <PyramidGrid onNumbersChange={setSortedSelectedNumbers} Page="your's" />  

@@ -8,7 +8,7 @@ const PyramidGrid = ({ onNumbersChange, Page }) => {
     const { sortedSelectedNumbers } = useNumbers();
 
     const handleBtnClicked = (number) => {
-        if (selectedNumbers.length < 7 || selectedNumbers.includes(number)) {
+        if (selectedNumbers.length < 2 || selectedNumbers.includes(number)) {
             setDigitLimit(false);
             setSelectedNumbers(oldList => {
                 if (oldList.includes(number)) {
@@ -27,10 +27,14 @@ const PyramidGrid = ({ onNumbersChange, Page }) => {
         onNumbersChange(sortedList);
     }, [selectedNumbers, onNumbersChange]);
 
-    const rows = [[1,2], [3,4,5], [6,7,8], [9,10,11,12], [13,14,15,16], [17,18,19,20,21]];
+    const rows = [
+        [1],
+        [2, 3],
+        [4, 5]
+    ];
     return (
         <div className='pyramid'>
-            {digitLimit && <span>YOU CAN'T SELECT MORE THAN 7 DIGITS</span>}
+            {digitLimit && <span>YOU CAN'T SELECT MORE THAN 2 DIGITS</span>}
             {rows.map((row, index) => (
                 <div key={index} className="pyramid-row">
                     {row.map(number => (

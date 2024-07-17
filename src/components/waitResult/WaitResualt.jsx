@@ -33,7 +33,7 @@ function WaitResualt() {
   }, []);
   
 
-  const maxAmount = 1300;
+  const maxAmount = 1000;
   // const percentage = totalAmount ? (totalAmount / maxAmount) * 100 : 0;
   // const percentage = totalAmount ? Math.round((totalAmount / maxAmount) * 100) : 0;
   const percentage = totalAmount ? Math.min(Math.round((totalAmount / maxAmount) * 100), 100) : 0;
